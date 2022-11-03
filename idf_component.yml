@@ -1,0 +1,8 @@
+version: "0.0.2"
+targets:
+  - esp32s2
+  - esp32s3
+description: TinyUSB as ESP-IDF component (just include src code)
+url: https://github.com/leeebo/tinyusb_src
+dependencies:
+  idf: ">=4.4"
