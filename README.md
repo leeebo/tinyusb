@@ -2,9 +2,16 @@
 
 [![Push component to https://components.espressif.com](https://github.com/leeebo/tinyusb_src/actions/workflows/sync_esp_pkgmng.yml/badge.svg?branch=master)](https://github.com/leeebo/tinyusb_src/actions/workflows/sync_esp_pkgmng.yml)
 
-The core code of TinyUSB as the ESP-IDF component, users can use the Tinyusb native interface for project development based on ESP32SX.
+The Core code of TinyUSB as ESP-IDF component, users can use the TinyUSB native API for project development based on ESP32Sx.
 
 For more information about TinyUSB, please refer https://docs.tinyusb.org
+
+## Version
+
+|Component Version|TinyUSB Base Commit|
+|--|--|
+|0.0.2| Oct 25, 2022 [28f49c088bb](https://github.com/hathach/tinyusb/commit/28f49c088bb0c498d730d80943017172061cfd05)|
+|0.0.3| Jun 21, 2023 [6cf735031f3](https://github.com/hathach/tinyusb/commit/6cf735031f35cd223231b7f94b8c3caa8286cb9e)|
 
 ## Feature
 
