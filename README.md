@@ -12,6 +12,7 @@ For more information about TinyUSB, please refer https://docs.tinyusb.org
 |--|--|
 |0.0.2| Oct 25, 2022 [28f49c088bb](https://github.com/hathach/tinyusb/commit/28f49c088bb0c498d730d80943017172061cfd05)|
 |0.0.3| Jun 21, 2023 [6cf735031f3](https://github.com/hathach/tinyusb/commit/6cf735031f35cd223231b7f94b8c3caa8286cb9e)|
+|0.0.4| Jun 21, 2023 [6cf735031f3](https://github.com/hathach/tinyusb/commit/6cf735031f35cd223231b7f94b8c3caa8286cb9e)|
 
 ## Feature
 
@@ -28,3 +29,12 @@ For more information about TinyUSB, please refer https://docs.tinyusb.org
    9. usbtmc
    10. vendor
    11. video
+
+## Develop Guide
+
+Like other native examples from TinyUSB repository, users need to add a configuration file `tusb_config.h` to the project and make it visible to the TinyUSB component. please refer:
+
+```cmake
+idf_component_get_property(tusb_lib leeebo__tinyusb_src COMPONENT_LIB)
+target_include_directories(${tusb_lib} PRIVATE include)
+```

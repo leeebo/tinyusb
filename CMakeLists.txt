@@ -1,6 +1,6 @@
 idf_component_register(SRCS "src/tusb.c" "src/common/tusb_fifo.c"
                     INCLUDE_DIRS "." "src"
-                    REQUIRES freertos soc main)
+                    REQUIRES freertos soc)
 
 set(DCD_DRIVER_SRC "")
 
