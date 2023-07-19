@@ -1,5 +1,10 @@
 # ChangeLog
 
+## v0.15.0~5 - 2023-07-19
+
+* Rebase upstream latest master [acfaa4494f](https://github.com/hathach/tinyusb/commit/acfaa4494faccd615475e4ae9d3df940ed13d7af)
+* Using new versioning scheme
+
 ## v0.0.4 - 2023-06-21
 
 * Remove dependency `main`, please check README.md `Develop Guide` for details.
