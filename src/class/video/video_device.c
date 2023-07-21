@@ -1104,6 +1104,8 @@ static int handle_video_stm_cs_req(uint8_t rhport, uint8_t stage,
               tusb_video_payload_header_t *hdr = (tusb_video_payload_header_t*)self->ep_buf;
               hdr->bHeaderLength = sizeof(*hdr);
               hdr->bmHeaderInfo  = 0;
+              /* This bit, when set, indicates the end of the BFH fields. Keep set for compatibility */
+              hdr->EndOfHeader = 1;
             }
           }
           return VIDEO_ERROR_NONE;
