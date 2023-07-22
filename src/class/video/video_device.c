@@ -31,7 +31,7 @@
 
 #include "device/usbd.h"
 #include "device/usbd_pvt.h"
-
+#include "esp_log.h"
 #include "video_device.h"
 
 //--------------------------------------------------------------------+
@@ -996,6 +996,7 @@ static int handle_video_stm_cs_req(uint8_t rhport, uint8_t stage,
             TU_VERIFY(_update_streaming_parameters(self, param), VIDEO_ERROR_INVALID_VALUE_WITHIN_RANGE);
             /* Set the negotiated value */
             self->max_payload_transfer_size = param->dwMaxPayloadTransferSize;
+            printf("Max payload transfer size %u\n\n", param->dwMaxPayloadTransferSize);
             int ret = VIDEO_ERROR_NONE;
             if (tud_video_commit_cb) {
               ret = tud_video_commit_cb(self->index_vc, self->index_vs, param);
@@ -1128,6 +1129,7 @@ bool tud_video_n_frame_xfer(uint_fast8_t ctl_idx, uint_fast8_t stm_idx, void *bu
   stm->buffer     = (uint8_t*)buffer;
   stm->bufsize    = bufsize;
   uint_fast16_t pkt_len = _prepare_in_payload(stm);
+  ESP_LOG_BUFFER_HEXDUMP("PAYLOAD", stm->ep_buf, (uint16_t) pkt_len, ESP_LOG_VERBOSE);
   TU_ASSERT( usbd_edpt_xfer(0, ep_addr, stm->ep_buf, (uint16_t) pkt_len), 0);
   return true;
 }
@@ -1279,6 +1281,7 @@ bool videod_xfer_cb(uint8_t rhport, uint8_t ep_addr, xfer_result_t result, uint3
     /* Claim the endpoint */
     TU_VERIFY( usbd_edpt_claim(rhport, ep_addr), 0);
     uint_fast16_t pkt_len = _prepare_in_payload(stm);
+    ESP_LOG_BUFFER_HEXDUMP("PAYLOAD", stm->ep_buf, (uint16_t) pkt_len, ESP_LOG_VERBOSE);
     TU_ASSERT( usbd_edpt_xfer(rhport, ep_addr, stm->ep_buf, (uint16_t) pkt_len), 0);
   } else {
     stm->buffer  = NULL;
