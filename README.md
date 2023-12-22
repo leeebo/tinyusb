@@ -10,11 +10,9 @@ For more information about TinyUSB, please refer https://docs.tinyusb.org
 
 |Component Version|TinyUSB Base Commit|
 |--|--|
-|0.0.2| Oct 25, 2022 [28f49c088bb](https://github.com/hathach/tinyusb/commit/28f49c088bb0c498d730d80943017172061cfd05)|
-|0.0.3| Jun 21, 2023 [6cf735031f3](https://github.com/hathach/tinyusb/commit/6cf735031f35cd223231b7f94b8c3caa8286cb9e)|
-|0.0.4| Jun 21, 2023 [6cf735031f3](https://github.com/hathach/tinyusb/commit/6cf735031f35cd223231b7f94b8c3caa8286cb9e)|
-|0.15.0~5| Jul 19, 2023 [acfaa4494f](https://github.com/hathach/tinyusb/commit/acfaa4494faccd615475e4ae9d3df940ed13d7af)|
-|0.15.0~7| Nov 1, 2023 [68faa45c6a](https://github.com/hathach/tinyusb/commit/68faa45c6a259f6d64b0c17526df48ec00e6717f)|
+|0.15.0~5| Jul 19, 2023 [acfaa44](https://github.com/hathach/tinyusb/commit/acfaa4494faccd615475e4ae9d3df940ed13d7af)|
+|0.15.0~7| Nov 1, 2023 [68faa45](https://github.com/hathach/tinyusb/commit/68faa45c6a259f6d64b0c17526df48ec00e6717f)|
+|0.16.0~1| Dec 22, 2023 [Tag 0.16.0](https://github.com/hathach/tinyusb/commit/1eb6ce784ca9b8acbbe43dba9f1d9c26c2e80eb0)|
 
 ## Feature
 
