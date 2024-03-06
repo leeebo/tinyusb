@@ -356,6 +356,9 @@
   #endif
   #define TUP_DCD_ENDPOINT_MAX    0
 
+#elif TU_CHECK_MCU(OPT_MCU_ESP32P4)
+  #define TUP_USBIP_DWC2
+  #define TUP_DCD_ENDPOINT_MAX    15
 //--------------------------------------------------------------------+
 // Dialog
 //--------------------------------------------------------------------+

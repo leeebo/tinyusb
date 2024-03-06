@@ -40,6 +40,9 @@ if(IDF_TARGET STREQUAL "esp32s2")
 elseif(IDF_TARGET STREQUAL "esp32s3")
   target_compile_options(${COMPONENT_LIB} PUBLIC
     "-DCFG_TUSB_MCU=OPT_MCU_ESP32S3")
+elseif(IDF_TARGET STREQUAL "esp32p4")
+  target_compile_options(${COMPONENT_LIB} PUBLIC
+    "-DCFG_TUSB_MCU=OPT_MCU_ESP32P4")
 else()
   message(FATAL_ERROR "${IDF_TARGET} not supported by tinyusb")
 endif()
