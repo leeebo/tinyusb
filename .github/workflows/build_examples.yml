@@ -1,0 +1,21 @@
+name: Build examples
+
+on: push
+  
+jobs:
+  build:
+    strategy:
+      matrix:
+        idf_ver: ["latest"]
+    runs-on: ubuntu-20.04
+    container: espressif/idf:${{ matrix.idf_ver }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+      - name: Build examples
+        shell: bash
+        run: |
+          . ${IDF_PATH}/export.sh
+          pip install "idf-build-apps<2.0"
+          idf-build-apps build  -p ./test/idf --recursive -t esp32s3

@@ -5,9 +5,15 @@ idf_component_register(SRCS "src/tusb.c" "src/common/tusb_fifo.c"
 set(DCD_DRIVER_SRC "")
 
 if(CONFIG_USING_SYNOPSYS_DWC2_DRIVER)
-  set(DCD_DRIVER_SRC espressif/esp32sx/dcd_esp32sx.c)
+set(DCD_DRIVER_SRC synopsys/dwc2/dcd_dwc2.c)
 else()
-  set(DCD_DRIVER_SRC synopsys/dwc2/dcd_dwc2.c)
+if(IDF_TARGET STREQUAL "esp32p4")
+# we only support DWC2 for esp32p4
+message(WARNING "Only DWC2 driver is supported for esp32p4")
+set(DCD_DRIVER_SRC synopsys/dwc2/dcd_dwc2.c)
+else()
+set(DCD_DRIVER_SRC espressif/esp32sx/dcd_esp32sx.c)
+endif()
 endif()
 
 target_sources(${COMPONENT_LIB} PRIVATE

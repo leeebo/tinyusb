@@ -1,5 +1,11 @@
 # ChangeLog
 
+## v0.16.0~2 - 2024-03-07
+
+* Add build Workflow
+* Support ESP32-P4
+* Rebase upstream latest
+
 ## v0.15.0~6 - 2023-07-21
 
 * Fix UVC Header EOH for compatibility
