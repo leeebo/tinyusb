@@ -1,5 +1,9 @@
 # ChangeLog
 
+## v0.16.0~3 - 2024-05-09
+
+* Temporary merge https://github.com/hathach/tinyusb/pull/2328 for uac
+
 ## v0.16.0~2 - 2024-03-07
 
 * Add build Workflow
