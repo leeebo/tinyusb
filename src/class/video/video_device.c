@@ -460,10 +460,10 @@ static bool _update_streaming_parameters(videod_streaming_interface_t const *stm
     case VIDEO_CS_ITF_VS_FORMAT_UNCOMPRESSED:
       param->wCompQuality = 1; /* 1 to 10000 */
       break;
-
     case VIDEO_CS_ITF_VS_FORMAT_MJPEG:
-      break;
-
+        break;
+    case VIDEO_CS_ITF_VS_FORMAT_FRAME_BASED:
+        break;
     default: return false;
   }
 
@@ -488,7 +488,9 @@ static bool _update_streaming_parameters(videod_streaming_interface_t const *stm
       case VIDEO_CS_ITF_VS_FORMAT_MJPEG:
         frame_size = (uint_fast32_t)frm->wWidth * frm->wHeight * 16 / 8; /* YUV422 */
         break;
-
+      case VIDEO_CS_ITF_VS_FORMAT_FRAME_BASED:
+        frame_size = (uint_fast32_t)frm->wWidth * frm->wHeight * 16 / 8; /* YUV422 */
+        break;
       default: break;
     }
     param->dwMaxVideoFrameSize = frame_size;
@@ -570,15 +572,16 @@ static bool _negotiate_streaming_parameters(videod_streaming_interface_t const *
 
       case VIDEO_REQUEST_GET_DEF:
         switch (fmt->bDescriptorSubType) {
-          case VIDEO_CS_ITF_VS_FORMAT_UNCOMPRESSED:
-            frmnum = fmt->uncompressed.bDefaultFrameIndex;
-            break;
-
-          case VIDEO_CS_ITF_VS_FORMAT_MJPEG:
-            frmnum = fmt->mjpeg.bDefaultFrameIndex;
-            break;
-
-          default: return false;
+        case VIDEO_CS_ITF_VS_FORMAT_UNCOMPRESSED:
+          frmnum = fmt->uncompressed.bDefaultFrameIndex;
+          break;
+        case VIDEO_CS_ITF_VS_FORMAT_MJPEG:
+          frmnum = fmt->mjpeg.bDefaultFrameIndex;
+          break;
+        case VIDEO_CS_ITF_VS_FORMAT_FRAME_BASED:
+          frmnum = fmt->frame_based.bDefaultFrameIndex;
+          break;
+        default: return false;
         }
         break;
       default: return false;
@@ -595,7 +598,9 @@ static bool _negotiate_streaming_parameters(videod_streaming_interface_t const *
       case VIDEO_CS_ITF_VS_FORMAT_MJPEG:
         frame_size = (uint_fast32_t)frm->wWidth * frm->wHeight * 16 / 8; /* YUV422 */
         break;
-
+      case VIDEO_CS_ITF_VS_FORMAT_FRAME_BASED:
+        frame_size = (uint_fast32_t)frm->wWidth * frm->wHeight * 16 / 8; /* YUV422 */
+        break;
       default: return false;
     }
     param->dwMaxVideoFrameSize = frame_size;

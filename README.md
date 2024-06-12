@@ -15,6 +15,8 @@ For more information about TinyUSB, please refer https://docs.tinyusb.org
 |0.16.0~1| Dec 22, 2023 [Tag 0.16.0](https://github.com/hathach/tinyusb/commit/1eb6ce784ca9b8acbbe43dba9f1d9c26c2e80eb0)|
 |0.16.0~2| Mar 7, 2024 [a0e5626b](https://github.com/hathach/tinyusb/commit/a0e5626bc50d484a23f33000c48082179f0cc2dd)|
 |0.16.0~3| May 9, 2024 [a0e5626b](https://github.com/hathach/tinyusb/commit/a0e5626bc50d484a23f33000c48082179f0cc2dd)|
+|0.16.0~3| May 9, 2024 [a0e5626b](https://github.com/hathach/tinyusb/commit/a0e5626bc50d484a23f33000c48082179f0cc2dd)|
+|0.16.0~4| May 22, 2024 [a0e5626b](https://github.com/hathach/tinyusb/commit/a0e5626bc50d484a23f33000c48082179f0cc2dd)|
 
 ## Feature
 

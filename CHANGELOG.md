@@ -1,5 +1,9 @@
 # ChangeLog
 
+## v0.16.0~4 - 2024-05-09
+
+* Temporary merge https://github.com/hathach/tinyusb/pull/2656 for uvc frame based
+
 ## v0.16.0~3 - 2024-05-09
 
 * Temporary merge https://github.com/hathach/tinyusb/pull/2328 for uac
