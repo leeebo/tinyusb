@@ -1,5 +1,9 @@
 # ChangeLog
 
+## v0.16.0~6 - 2024-07-31
+
+* Fixed define for DWC_EP_MAX value(dwc2_esp32)
+
 ## v0.16.0~5 - 2024-06-19
 
 * Support source code only mode. enable `TINYUSB_SOURCE_CODE_ONLY` (disable by default) to not build as static library. This is useful for projects that want to include tinyusb source code directly in their project.
